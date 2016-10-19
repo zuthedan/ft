@@ -1,0 +1,7 @@
+This project is meant to be used for sharing source code files used in the exercises. Therefore, it should only contain files which are used as a template for the exercises, not their solutions.
+
+The project currently contains:
+
+* exercise 2
+	* TimeFormatter.java
+	* java FX libraries    
