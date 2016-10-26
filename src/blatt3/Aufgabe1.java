@@ -6,11 +6,14 @@ public class Aufgabe1 {
 
 	// Menueausgabe:
 	System.out.println("=============================================================\n"
-		+ "Waehlen Sie aus den folgenden Optionen:\n" + "1 : Berechnung der Flaeche eines Rechteck\n"
+		+ "Waehlen Sie aus den folgenden Optionen:\n" 
+		+ "1 : Berechnung der Flaeche eines Rechteck\n"
 		+ "2 : Berechnung der Flaeche eines rechtwinkligen Dreiecks\n"
-		+ "3 : Berechnung der Flaeche eines Kreises\n" + "4 : Berechnung des Volumen eines Kegels\n"
+		+ "3 : Berechnung der Flaeche eines Kreises\n" 
+		+ "4 : Berechnung des Volumen eines Kegels\n"
 		+ "5 : Berechnung der Mantelflaeche eines Kegelstumpfs\n"
-		+ "6 : Berechnung der Funktion f aus der Aufgabenstellung\n" + "7 : Programm beenden\n"
+		+ "6 : Berechnung der Funktion f aus der Aufgabenstellung\n" 
+		+ "7 : Programm beenden\n"
 		+ "=============================================================");
 
 	switch (readInt()) { // Reaktion auf Auswahl
