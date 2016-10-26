@@ -1,0 +1,14 @@
+###############
+### README ####
+###############
+
+In order to compile the file 
+
+* Aufgabe1.java
+	
+you need type the following commands 
+
+javac Aufgabe1.java
+java Aufgabe1
+
+If you have any trouble compiling the software, please consult Mathias Schubanz at M.Schubanz@b-tu.de
