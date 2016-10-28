@@ -1,3 +1,4 @@
+package blatt3;
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -38,8 +39,10 @@ public class Aufgabe1 {
      */    
     private static double readDouble() { /** Double-Wert einlesen */
 	try {
-	    Scanner scan = new Scanner(System.in);
-	    double input = scan.nextDouble();
+	    Scanner scanner = new Scanner(System.in);
+	    double input = scanner.nextDouble();
+	    scanner.close();
+	    
 	    return (input < 0) ? 0 : input;
 	} catch (Exception e) {
 	    System.out.println("Es ist ein Fehler beim Einlesen aufgetreten.");
@@ -49,8 +52,10 @@ public class Aufgabe1 {
 
     private static int readInt() { /** Int-Wert einlesen */
 	try {
-	    Scanner sc = new Scanner(System.in);
-	    int input = sc.nextInt();
+	    Scanner scanner = new Scanner(System.in);
+	    int input = scanner.nextInt();
+	    scanner.close();
+	    
 	    return (input < 0) ? 0 : input;
 	} catch (Exception e) {
 	    System.out.println("Es ist ein Fehler beim Einlesen aufgetreten.");
