@@ -6,7 +6,7 @@ In order to compile the file
 
 * Aufgabe1.java
 	
-you need type the following commands 
+on the command line, please remove line containing the package declaration from the java file ("package blatt3;"). If you know how to handle the package declaration, you do not need to touch it. Subsequently, you need type the following commands 
 
 javac Aufgabe1.java
 java Aufgabe1
