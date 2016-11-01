@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.lang.Math;
 
 public class Aufgabe1 {
+    
     public static void main(String[] args) {
 
 	// Menueausgabe:
@@ -29,22 +30,22 @@ public class Aufgabe1 {
 	}
     }
 
-    /** 
+    /**
      * =====================================================================
      * ========================== HILFSFUNKTIONEN ==========================
      * =====================================================================
      * 
-     * Nutzen Sie die folgenden beiden folgenden Funktionen um Werte einzulesen! 
-     *  
-     */    
+     * Nutzen Sie die folgenden beiden folgenden Funktionen um Werte einzulesen!
+     * 
+     */
     private static double readDouble() { /** Double-Wert einlesen */
 	try {
 	    Scanner scanner = new Scanner(System.in);
 	    double input = scanner.nextDouble();
-	    scanner.close();
-	    
 	    return (input < 0) ? 0 : input;
+
 	} catch (Exception e) {
+	    e.printStackTrace();
 	    System.out.println("Es ist ein Fehler beim Einlesen aufgetreten.");
 	    return 0;
 	}
@@ -54,9 +55,8 @@ public class Aufgabe1 {
 	try {
 	    Scanner scanner = new Scanner(System.in);
 	    int input = scanner.nextInt();
-	    scanner.close();
-	    
 	    return (input < 0) ? 0 : input;
+
 	} catch (Exception e) {
 	    System.out.println("Es ist ein Fehler beim Einlesen aufgetreten.");
 	    return 0;
