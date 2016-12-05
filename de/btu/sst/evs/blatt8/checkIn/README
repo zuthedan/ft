@@ -1,0 +1,21 @@
+The package enums contains enumerations used within the check-in software.
+
+Currently available  
+	* CheckInKanal
+	* Waehrung
+	* Zahlungskanal
+	
+The package exceptions contains exception classes used within the check-in software.
+
+Currently available  
+	* KundeNichtGefundenException
+	* RabattNichtGefundenException
+	
+The package kundenverwaltung contains all relevant java classes to manage customer data for the check-in software
+
+Currently available  
+	* Kunde
+	* Kundenspeicher
+	* Kundenverwaltung
+	* Rabatt
+	* Zahlungsmittel
