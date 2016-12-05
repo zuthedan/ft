@@ -3,9 +3,17 @@ This project is meant to be used for sharing source code files used in the exerc
 The project currently contains:
 
 * exercise 2 - task 7
+ 	* de.btu.sst.evs.blatt2
 	* TimeFormatter.java
 	* README
 	
 * exercise 3 - task 1
-	* Aufgabe1.java
-	* README        
+	* de.btu.sst.evs.blatt3
+	* README
+	
+* exercise 8 - task 4
+	* de.btu.sst.evs.blatt8.checkIn
+		* Paket enums
+		* Paket exceptions
+		* Paket kundenverwaltung
+	* README

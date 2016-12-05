@@ -1,4 +1,4 @@
-package blatt3;
+package de.btu.sst.evs.blatt3;
 import java.util.Scanner;
 import java.lang.Math;
 
