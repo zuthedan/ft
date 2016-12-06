@@ -11,6 +11,14 @@ import de.btu.sst.evs.blatt8.checkIn.enums.Zahlungskanal;
 import de.btu.sst.evs.blatt8.checkIn.exceptions.KundeNichtGefundenException;
 import de.btu.sst.evs.blatt8.checkIn.exceptions.RabattNichtGefundenException;
 
+/**
+ * Diese Klasse Kundenverwaltung ist verantwortlich für den Umgang mit allen
+ * Kundenobjekten. Das inkludiert alle dazugehörigen Rabatt- sowie
+ * Zahlungsmittelobjekte.
+ * 
+ * @author Mathias Schubanz
+ */
+
 public class Kundenverwaltung {
 
     private KundenSpeicher kundenspeicher;
@@ -148,28 +156,33 @@ public class Kundenverwaltung {
 	throw new KundeNichtGefundenException("Kunde nicht gefunden");
     }
 
-//    public Zahlungsmittel getPraeferiertesZahlungsmittel(long kundenNr) throws KundeNichtGefundenException {
-//	if (this.istBereitsKunde(kundenNr)) {
-//	    return kundenIndex.get(kundenNr).getPraeferiertesZahlungsmittel();
-//	}
-//
-//	throw new KundeNichtGefundenException("Kunde nicht gefunden");
-//
-//    }
-//
-//    public void setPraeferiertesZahlungsmittel(long kundenNr, Zahlungsmittel zahlungsmittel)
-//	    throws KundeNichtGefundenException, ZahlungsmittelNichtGefundenException {
-//
-//	if (this.istBereitsKunde(kundenNr)) {
-//	    if (kundenIndex.get(kundenNr).getZahlungsmittel().contains(zahlungsmittel)) {
-//		kundenIndex.get(kundenNr).setPraeferiertesZahlungsmittel(zahlungsmittel);
-//		return;
-//	    }
-//	    throw new ZahlungsmittelNichtGefundenException("Kunde nicht gefunden");
-//	}
-//
-//	throw new KundeNichtGefundenException("Kunde nicht gefunden");
-//    }
+    // public Zahlungsmittel getPraeferiertesZahlungsmittel(long kundenNr)
+    // throws KundeNichtGefundenException {
+    // if (this.istBereitsKunde(kundenNr)) {
+    // return kundenIndex.get(kundenNr).getPraeferiertesZahlungsmittel();
+    // }
+    //
+    // throw new KundeNichtGefundenException("Kunde nicht gefunden");
+    //
+    // }
+    //
+    // public void setPraeferiertesZahlungsmittel(long kundenNr, Zahlungsmittel
+    // zahlungsmittel)
+    // throws KundeNichtGefundenException, ZahlungsmittelNichtGefundenException
+    // {
+    //
+    // if (this.istBereitsKunde(kundenNr)) {
+    // if
+    // (kundenIndex.get(kundenNr).getZahlungsmittel().contains(zahlungsmittel))
+    // {
+    // kundenIndex.get(kundenNr).setPraeferiertesZahlungsmittel(zahlungsmittel);
+    // return;
+    // }
+    // throw new ZahlungsmittelNichtGefundenException("Kunde nicht gefunden");
+    // }
+    //
+    // throw new KundeNichtGefundenException("Kunde nicht gefunden");
+    // }
 
     private boolean istBereitsKunde(long kundenNr) {
 	return kundenIndex.get(kundenNr) != null;

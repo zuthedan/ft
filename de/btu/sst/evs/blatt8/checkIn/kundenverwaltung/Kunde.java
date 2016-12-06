@@ -6,6 +6,13 @@ import java.util.List;
 import de.btu.sst.evs.blatt8.checkIn.enums.CheckInKanal;
 import de.btu.sst.evs.blatt8.checkIn.exceptions.RabattNichtGefundenException;
 
+/**
+ * Diese Klasse Kunde modelliert alle Daten rund um einen Kunden des
+ * CheckInSystems.
+ * 
+ * @author Mathias Schubanz
+ */
+
 public class Kunde {
 
     private long kundenNr;

@@ -2,6 +2,13 @@ package de.btu.sst.evs.blatt8.checkIn.kundenverwaltung;
 
 import de.btu.sst.evs.blatt8.checkIn.enums.Zahlungskanal;
 
+/**
+ * Diese Klasse Zahlungsmittel modelliert alle Daten rund um einen möglichen Weg
+ * seine Buchungen zu bezahlen.
+ * 
+ * @author Mathias Schubanz
+ */
+
 public class Zahlungsmittel {
 
     // Bspw: Zahlungsmittel.DEBIT_CARD

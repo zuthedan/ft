@@ -5,6 +5,12 @@ import java.util.List;
 
 import de.btu.sst.evs.blatt8.checkIn.enums.Waehrung;
 
+/**
+ * Diese Klasse Rabatt modelliert alle Daten rund um einen Nachlass fuer den Kunden
+ * 
+ * @author Mathias Schubanz
+ */
+
 public class Rabatt {
 
     private String aktionsName;

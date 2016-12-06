@@ -31,17 +31,9 @@ public class KundenSpeicher {
     }
 
     /**
-     * Die Funktion liefert Beispieldaten für 10 Kunden. Die Beispieldaten
-     * werden in einer Liste mit Kunde Instanzen zurückgeliefert. Ein Nutzer ist
-     * selbst wieder eine Liste von Zeichenketten.
+     * Die Funktion liefert Beispieldaten fuer 5 Kunden. Die Beispieldaten
+     * werden in einer Liste mit Kunde Instanzen gespeichert. 
      * 
-     * Der Aufbau einer Nutzer-Liste ist folgender: Die erste Zeichenkette gibt
-     * den Nutzertyp "Student" oder "Tutor" an. Danach folgt der Benutzername,
-     * das Passwort, der Name, der Vorname, die Emailadresse und bei Studenten
-     * die Matrikelnummer sowie der Studiengang des Nutzers.
-     * 
-     * @return Liste von Nutzern, wobei Nutzer wiederum Listen von Zeichenketten
-     *         sind
      */
     public void initialisiereKundenliste() {
 
