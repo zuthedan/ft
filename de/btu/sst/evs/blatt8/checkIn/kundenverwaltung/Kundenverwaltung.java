@@ -96,12 +96,12 @@ public class Kundenverwaltung {
 	return -1;
     }
 
-    public void widerrufeRabattFuerEinenKunde(long kundenNr, String aktionsCode)
+    public void widerrufeRabattFuerEinenKunde(long kundenNr, String rabattCode)
 	    throws KundeNichtGefundenException, RabattNichtGefundenException {
 
 	if (this.istBereitsKunde(kundenNr)) {
-	    if (kundenIndex.get(kundenNr).getRabatt(aktionsCode) != null) {
-		kundenIndex.get(kundenNr).getRabatt(aktionsCode).setWiderrufen(true);
+	    if (kundenIndex.get(kundenNr).getRabatt(rabattCode) != null) {
+		kundenIndex.get(kundenNr).getRabatt(rabattCode).setWiderrufen(true);
 	    }
 	    throw new RabattNichtGefundenException("Kunde nicht gefunden");
 	}
@@ -109,11 +109,11 @@ public class Kundenverwaltung {
 	throw new KundeNichtGefundenException("Kunde nicht gefunden");
     }
 
-    public void widerrufeRabattFuerAlleKunden(String aktionsCode) {
+    public void widerrufeRabattFuerAlleKunden(String rabattCode) {
 
 	for (Kunde k : kundenstamm) {
-	    if (k.getRabatt(aktionsCode) != null) {
-		k.getRabatt(aktionsCode).setWiderrufen(true);
+	    if (k.getRabatt(rabattCode) != null) {
+		k.getRabatt(rabattCode).setWiderrufen(true);
 	    }
 	}
     }

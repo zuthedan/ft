@@ -10,7 +10,7 @@ public class Rabatt {
     private String aktionsName;
     private float rabattEinheiten;
     private Waehrung waehrung;
-    // Eine Liste von Objekten Zahlungsmittel, auf die dieser Rabatt eingeschränkt ist.
+    // Eine Liste von Objekten Zahlungsmittel, auf die dieser Rabatt eingeschraenkt ist.
     private List<Zahlungsmittel> eingeschraenkteZahlungsmittel;
     private Date gueltigkeit;
     private boolean widerrufen;
@@ -18,7 +18,7 @@ public class Rabatt {
     private String rabattCode;
 
     public Rabatt(String aktionsName, float rabattInGeldeinheiten, Waehrung waehrung, Date gueltigkeit,
-	    boolean widerrufen, String notiz, String rabattCode, List<Zahlungsmittel> eingeschränkteZahlungsmittel) {
+	    boolean widerrufen, String notiz, String rabattCode, List<Zahlungsmittel> eingeschraenkteZahlungsmittel) {
 	super();
 	this.aktionsName = aktionsName;
 	this.rabattEinheiten = rabattInGeldeinheiten;
@@ -27,7 +27,7 @@ public class Rabatt {
 	this.widerrufen = widerrufen;
 	this.notiz = notiz;
 	this.rabattCode = rabattCode;
-	this.eingeschraenkteZahlungsmittel = eingeschränkteZahlungsmittel;
+	this.eingeschraenkteZahlungsmittel = eingeschraenkteZahlungsmittel;
     }
 
     public Rabatt(String aktionsName, float rabattEinheiten, Waehrung waehrung, Date gueltigkeit, boolean widerrufen,
