@@ -10,6 +10,7 @@ import de.btu.sst.evs.blatt8.checkIn.enums.Waehrung;
 import de.btu.sst.evs.blatt8.checkIn.enums.Zahlungskanal;
 import de.btu.sst.evs.blatt8.checkIn.exceptions.KundeNichtGefundenException;
 import de.btu.sst.evs.blatt8.checkIn.exceptions.RabattNichtGefundenException;
+import de.btu.sst.evs.blatt8.checkIn.kundenverwaltung.Kunde;
 
 /**
  * Diese Klasse Kundenverwaltung ist verantwortlich für den Umgang mit allen
@@ -192,4 +193,19 @@ public class Kundenverwaltung {
 	return this.kundenstamm;
     }
 
+    public void aktualisiereKundendaten(Long kundenNr, String name, String vorname, String eMail,
+	    String nationalitaet) throws KundeNichtGefundenException {
+	if (this.istBereitsKunde(kundenNr)) {
+	    Kunde currKunde = kundenIndex.get(kundenNr);
+	    currKunde.setName(name);
+	    currKunde.setVorname(vorname);
+	    currKunde.setEmail(eMail);
+	    currKunde.setNationalitaet(nationalitaet);
+	    
+	    return;
+	} 
+	throw new KundeNichtGefundenException("Kunde nicht gefunden");
+
+    }
+    
 }

@@ -6,8 +6,19 @@ package de.btu.sst.evs.blatt8.checkIn.enums;
 
 public enum CheckInKanal {
     
-    WEBBASIERT,
-    SCHALTER,
-    SELBSTBEDIENUNGSTERMINAL,
-    MOBILGERAET
+    WEBBASIERT("Web-basiert"),
+    SCHALTER("Schalter"),
+    SELBSTBEDIENUNGSTERMINAL("Selbstbedienungsterminal"),
+    MOBILGERAET("Mobilgerät");
+
+    CheckInKanal(String value) {
+	this.textValue = value;
+    }
+
+    private String textValue;
+
+    public String toString() {
+	return this.textValue;
+    }
 }
+

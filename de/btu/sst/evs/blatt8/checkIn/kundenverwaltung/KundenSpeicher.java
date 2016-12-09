@@ -45,7 +45,14 @@ public class KundenSpeicher {
 	// bevorzugterCheckInKanal, zahlungsmittel,
 	// praeferiertesZahlungsmilttel, rabatte
 	//
-	kundenListe.add(new Kunde(this.laufendeKundennummer++, "muellman@b-tu.de", "Müller", "Mannfred", "Deutschland"));
+//	List<Rabatt> tmp_rabatt = new ArrayList<>();
+//	tmp_rabatt.add(new Rabatt("Neueröffnung2016", 25.0f, Waehrung.PROZENT, new Date(0), false, "", "NEU2016_25", null));
+//	tmp_rabatt.add(new Rabatt("Neueröffnung2016", 5.0f, Waehrung.PROZENT, new Date(0), false, "", "NEU2016_10", null));
+//	tmp_rabatt.add(new Rabatt("Neueröffnung2016", 105.0f, Waehrung.PROZENT, new Date(0), false, "", "NEU2016_5", null));	
+//	List<Zahlungsmittel> tmp_zahlungsmittel = new ArrayList<>();
+//	tmp_zahlungsmittel.add(new Zahlungsmittel(Zahlungskanal.DEBIT_CARD, "Timo Arsenti", "DE1210020030123456789", "", ""));
+//	tmp_zahlungsmittel.add(new Zahlungsmittel(Zahlungskanal.VISA_CARD, "Timo Arsenti", "DE1210020030987654321", "", ""));
+//	kundenListe.add(new Kunde(this.laufendeKundennummer++, "muellman@b-tu.de", "Müller", "Mannfred", "Deutschland", tmp_zahlungsmittel, tmp_rabatt)));
 	
 	List<Rabatt> tmp_rabatt = new ArrayList<>();
 	tmp_rabatt.add(new Rabatt("Neueröffnung2016", 25.0f, Waehrung.PROZENT, new Date(0), false, "", "NEU2016_25", null));
