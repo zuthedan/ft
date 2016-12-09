@@ -5,6 +5,8 @@ import java.util.List;
 
 import de.btu.sst.evs.blatt8.checkIn.enums.CheckInKanal;
 import de.btu.sst.evs.blatt8.checkIn.exceptions.RabattNichtGefundenException;
+import de.btu.sst.evs.blatt8.checkIn.kundenverwaltung.Rabatt;
+import de.btu.sst.evs.blatt8.checkIn.kundenverwaltung.Zahlungsmittel;
 
 /**
  * Diese Klasse Kunde modelliert alle Daten rund um einen Kunden des
@@ -36,7 +38,19 @@ public class Kunde {
 	this.praeferierterCheckInKanal = bevorzugterCheckInKanal;
 	this.zahlungsmittel = zahlungsmittelListe;
 	this.rabatte = rabatte;
+    }
 
+    public Kunde(long kundenNr, String eMail, String name, String vorname, String nationalitaet,
+	    CheckInKanal bevorzugterCheckInKanal, List<Zahlungsmittel> zahlungsmittelListe) {
+	super();
+
+	this.kundenNr = kundenNr;
+	this.eMail = eMail;
+	this.name = name;
+	this.vorname = vorname;
+	this.nationalitaet = nationalitaet;
+	this.praeferierterCheckInKanal = bevorzugterCheckInKanal;
+	this.zahlungsmittel = zahlungsmittelListe;
     }
 
     public Kunde(long kundenNr, String eMail, String name, String vorname, String nationalitaet,
