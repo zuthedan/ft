@@ -51,7 +51,7 @@ public class Rabatt {
     public Rabatt(String aktionsName, float rabattEinheiten, Waehrung waehrung, Date gueltigkeit, String rabattCode,
 	    String notiz) {
 	super();
-	this.aktionsName = "";
+	this.aktionsName = aktionsName;
 	this.rabattEinheiten = rabattEinheiten;
 	this.waehrung = waehrung;
 	this.gueltigkeit = gueltigkeit;
