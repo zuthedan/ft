@@ -19,3 +19,13 @@ Currently available
 	* Kundenverwaltung
 	* Rabatt
 	* Zahlungsmittel
+	
+Compiling (MacOS / Linux)
+
+Navigate to the checkIn package folder. Execute the following:
+
+* javac gui/*java exceptions/* enums/* kundenverwaltung/*
+
+Navigate to the src folder and execute the following:
+
+* java de.btu.sst.evs.blatt8.checkIn.gui.Main
