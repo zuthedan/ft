@@ -1,0 +1,8 @@
+The package shapes contains: 
+
+	* Interface IFigure -- an interface defining functionality for any geometric figure 
+	* Class Point -- a java class encapsulating information for a localisation in a 2D-coordinate system  
+	
+Compiling (MacOS / Linux)
+
+	* For task number 5 compiling is neither possible nor required. 
