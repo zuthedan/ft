@@ -1,4 +1,4 @@
-package de.btu.sst.evs.blatt10.drawlingLib.shapes;
+package de.btu.sst.evs.blatt10.drawingLib.shapes;
 
 public interface IFigure {
 
