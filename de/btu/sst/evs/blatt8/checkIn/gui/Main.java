@@ -46,7 +46,7 @@ public class Main extends Application {
 
 	this.primaryStage = primaryStage;
 	primaryStage.setTitle("Kundenmanagement-Anmeldung");
-	this.zeigeAnmeldeGUI();
+	this.showLogin();
 	primaryStage.show();
 
     }
@@ -58,7 +58,7 @@ public class Main extends Application {
      * registrierten Kunden angezeigt. Bei Misserfolg wird ein Fehler
      * ausgegeben.
      */
-    private Scene zeigeAnmeldeGUI() {
+    private Scene showLogin() {
 
 	GridPane grid = new GridPane();
 	grid.setAlignment(Pos.TOP_CENTER);
@@ -112,7 +112,7 @@ public class Main extends Application {
 		//
 		// Dialogs.showInformation("Sie haben sich erfolgreich
 		// eingeloggt");
-		kundenVerwaltungOeffnen();
+		showCustomerManagement();
 	    } else {
 
 		Dialogs.showErrorDialog("Die eingegebenen Nutzerdaten sind nicht korrekt!");
@@ -143,7 +143,7 @@ public class Main extends Application {
      * übergeben. Damit geht nachdem Login der Kontrolfluss komplett an die
      * KunderverwaltungsGUI über.
      */
-    private void kundenVerwaltungOeffnen() {
+    private void showCustomerManagement() {
 	new KundenverwaltungGUI(primaryStage);
     }
 

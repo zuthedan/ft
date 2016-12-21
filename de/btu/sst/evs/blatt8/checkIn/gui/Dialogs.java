@@ -12,7 +12,7 @@ import javafx.scene.control.Alert.AlertType;
 
 public class Dialogs {
 
-    public static void showInformation(String content) {
+    protected static void showInformation(String content) {
 	Alert alert = new Alert(AlertType.INFORMATION);
 	alert.setTitle("Information");
 	alert.setHeaderText(null);
@@ -20,7 +20,7 @@ public class Dialogs {
 	alert.showAndWait();
     }
 
-    public static void showErrorDialog(String content) {
+    protected static void showErrorDialog(String content) {
 	Alert alert = new Alert(AlertType.ERROR);
 	alert.setTitle("Fehler");
 	alert.setHeaderText("Fehlerhafte Eingabe!");
