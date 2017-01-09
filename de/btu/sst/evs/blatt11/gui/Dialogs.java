@@ -1,4 +1,4 @@
-package de.btu.sst.evs.blatt11.checkIn.gui;
+package de.btu.sst.evs.blatt11.gui;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;

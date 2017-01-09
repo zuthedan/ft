@@ -1,4 +1,4 @@
-package de.btu.sst.evs.blatt11.checkIn.gui;
+package de.btu.sst.evs.blatt11.gui;
 
 import java.io.File;
 import java.util.Arrays;
