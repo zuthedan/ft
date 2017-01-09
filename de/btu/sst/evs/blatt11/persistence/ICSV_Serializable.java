@@ -23,11 +23,10 @@ public interface ICSV_Serializable {
     public List<String[]> serializeIncludingAggregates();
 
     /**
-     * This method returns a list a String array. Assuming that the object to be
-     * serialized does not contain any aggregates from higher multiplicity, it
-     * is called in order to serialize the current object. The String array is
-     * expected to start with a unique object identifier. Subsequently all
-     * attributes should be stored in its string representation.
+     * This method serializes the object on which its is called and returns a
+     * String array with the corresponding values. The array is expected to
+     * start with a unique object identifier. Subsequently all attributes should
+     * be stored in its string representation.
      * 
      * @return : String[] -- A String array representing the serialized object.
      */

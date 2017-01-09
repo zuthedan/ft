@@ -9,7 +9,7 @@ import de.btu.sst.evs.blatt11.persistence.ICSV_Serializable;
 
 public class Zahlungsmittel implements ICSV_Serializable {
 
- // Bspw: Zahlungsmittel.DEBIT_CARD
+    // Bspw: Zahlungsmittel.DEBIT_CARD
     private Zahlungskanal zahlungskanal;
     // Bspw: Micheal Mustermann
     private String kontobesitzer;
@@ -85,6 +85,9 @@ public class Zahlungsmittel implements ICSV_Serializable {
 
     @Override
     public String[] serialize() {
+	// Folgend finden Sie ein Beipsiel für das Speichern des eindeutigen
+	// Bezeichners für ein Rabatt-Objekt an die erste Stelle des Feldes
+	// serializedPaymentMethod[0] = SerializableUID.ZAHLUNGSMITTEL.toString();
 	// TODO
 	return null;
     }

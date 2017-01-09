@@ -194,6 +194,9 @@ public class Kunde implements ICSV_Serializable {
 
     @Override
     public String[] serialize() {
+	// Folgend finden Sie ein Beipsiel für das Speichern des eindeutigen
+	// Bezeichners für ein Kunden-Objekt an die erste Stelle des Feldes
+	// serializedCustomer[0] = SerializableUID.KUNDE.toString();
 	// TODO
 	return null;
     }

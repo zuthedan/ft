@@ -150,12 +150,16 @@ public class Rabatt implements ICSV_Serializable {
 
     @Override
     public String[] serialize() {
-
+	// Folgend finden Sie ein Beipsiel für das Speichern des eindeutigen
+	// Bezeichners für ein Rabatt-Objekt an die erste Stelle des Feldes
+	// serializedDiscount[0] = SerializableUID.RABATT.toString();
+	// TODO
 	return null;
     }
 
     @Override
     public void deserialize(String[] values) {
+	// TODO
     }
 
 }
