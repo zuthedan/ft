@@ -8,9 +8,9 @@ import de.btu.sst.evs.blatt11.checkIn.enums.SerializableUID;
 import de.btu.sst.evs.blatt11.checkIn.exceptions.RabattNichtGefundenException;
 import de.btu.sst.evs.blatt11.checkIn.kundenverwaltung.Rabatt;
 import de.btu.sst.evs.blatt11.checkIn.kundenverwaltung.Zahlungsmittel;
-import de.btu.sst.evs.blatt11.persistence.ICSVSerializable;
+import de.btu.sst.evs.blatt11.persistence.ICSV_Serializable;
 
-public class Kunde implements ICSVSerializable {
+public class Kunde implements ICSV_Serializable {
 
     private long kundenNr;
     private String eMail;

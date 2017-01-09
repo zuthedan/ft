@@ -5,9 +5,9 @@ import java.util.List;
 
 import de.btu.sst.evs.blatt11.checkIn.enums.SerializableUID;
 import de.btu.sst.evs.blatt11.checkIn.enums.Zahlungskanal;
-import de.btu.sst.evs.blatt11.persistence.ICSVSerializable;
+import de.btu.sst.evs.blatt11.persistence.ICSV_Serializable;
 
-public class Zahlungsmittel implements ICSVSerializable {
+public class Zahlungsmittel implements ICSV_Serializable {
 
  // Bspw: Zahlungsmittel.DEBIT_CARD
     private Zahlungskanal zahlungskanal;

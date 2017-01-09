@@ -6,7 +6,7 @@ import java.util.List;
  * This interface needs to be implemented by all classes which are meant to be
  * serialized into CSV format and deserialized from CSV format.
  */
-public interface ICSVSerializable {
+public interface ICSV_Serializable {
 
     /**
      * This method returns a list of String[] objects. Each String field is

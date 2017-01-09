@@ -42,14 +42,14 @@ public class CSVStorageManager {
 	return null;
     }
 
-    public void storeObjects(File file, List<? extends ICSVSerializable> objectList) {
+    public void storeObjects(File file, List<? extends ICSV_Serializable> objectList) {
 
 	CSVWriter writer;
 	try {
 	    writer = new CSVWriter(new FileWriter(file), ';');
 	    // feed in your array (or convert your data to an array)
 	    List<String[]> resultList = new ArrayList<>(); 
-	    for (ICSVSerializable obj : objectList) {
+	    for (ICSV_Serializable obj : objectList) {
 		resultList.addAll(obj.serializeIncludingAggregates());
 	    }		
 	    writer.writeAll(resultList);

@@ -6,10 +6,10 @@ import java.util.List;
 
 import de.btu.sst.evs.blatt11.checkIn.enums.SerializableUID;
 import de.btu.sst.evs.blatt11.checkIn.enums.Waehrung;
-import de.btu.sst.evs.blatt11.persistence.ICSVSerializable;
+import de.btu.sst.evs.blatt11.persistence.ICSV_Serializable;
 import de.btu.sst.evs.blatt11.checkIn.kundenverwaltung.Zahlungsmittel;
 
-public class Rabatt implements ICSVSerializable {
+public class Rabatt implements ICSV_Serializable {
 
     private String aktionsname;
     private float rabattEinheiten;
