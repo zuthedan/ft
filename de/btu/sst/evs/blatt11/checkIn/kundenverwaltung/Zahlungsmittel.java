@@ -1,17 +1,15 @@
-package de.btu.sst.evs.blatt8.checkIn.kundenverwaltung;
+package de.btu.sst.evs.blatt11.checkIn.kundenverwaltung;
 
-import de.btu.sst.evs.blatt8.checkIn.enums.Zahlungskanal;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Diese Klasse Zahlungsmittel modelliert alle Daten rund um einen möglichen Weg
- * seine Buchungen zu bezahlen.
- * 
- * @author Mathias Schubanz
- */
+import de.btu.sst.evs.blatt11.checkIn.enums.SerializableUID;
+import de.btu.sst.evs.blatt11.checkIn.enums.Zahlungskanal;
+import de.btu.sst.evs.blatt11.persistence.ICSVSerializable;
 
-public class Zahlungsmittel {
+public class Zahlungsmittel implements ICSVSerializable {
 
-    // Bspw: Zahlungsmittel.DEBIT_CARD
+ // Bspw: Zahlungsmittel.DEBIT_CARD
     private Zahlungskanal zahlungskanal;
     // Bspw: Micheal Mustermann
     private String kontobesitzer;
@@ -20,14 +18,18 @@ public class Zahlungsmittel {
     private String genehmigungsvermerk;
     private String notizen;
 
-    public Zahlungsmittel(Zahlungskanal zahlungskanal, String accountBesitzer, String accountNummer,
-	    String genehmigungsvermerk, String notizen) {
+    public Zahlungsmittel(Zahlungskanal zahlungskanal, java.lang.String accountBesitzer, String accountNummer,
+	    java.lang.String genehmigungsvermerk, String notizen) {
 	super();
 	this.zahlungskanal = zahlungskanal;
 	this.kontobesitzer = accountBesitzer;
 	this.kontonummer = accountNummer;
 	this.genehmigungsvermerk = genehmigungsvermerk;
 	this.notizen = notizen;
+    }
+
+    public Zahlungsmittel() {
+	super();
     }
 
     public Zahlungskanal getZahlungskanal() {
@@ -68,4 +70,28 @@ public class Zahlungsmittel {
     public String toString() {
 	return zahlungskanal.toString();
     }
+
+    @Override
+    public List<String[]> serializeIncludingAggregates() {
+	List<String[]> resultList = new ArrayList<>();
+	resultList.add(this.serialize());
+	return resultList;
+    }
+
+    @Override
+    public void deserializeIncludingAggregates(List<String[]> values) {
+	this.deserialize(values.get(0));
+    }
+
+    @Override
+    public String[] serialize() {
+	// TODO
+	return null;
+    }
+
+    @Override
+    public void deserialize(String[] serializedPaymentMethod) {
+	// TODO
+    }
+
 }

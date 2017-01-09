@@ -166,12 +166,12 @@ public class KundenverwaltungGUI {
 
 	TableColumn<Kunde, String> paymentMethodTC = new TableColumn<>("Zahlungsmittel");
 	paymentMethodTC.setMinWidth(140);
-	paymentMethodTC.setCellValueFactory(currCustomerCDF -> this.formatPaymentMethodCellContent(currCustomerCDF));
+	paymentMethodTC.setCellValueFactory(currCustomerCDF -> this.formatPaymentMethods(currCustomerCDF));
 	customerTableView.getColumns().add(paymentMethodTC);
 
 	TableColumn<Kunde, String> discountTC = new TableColumn<>("Rabatte");
 	discountTC.setMinWidth(190);
-	discountTC.setCellValueFactory(currCustomer -> this.formatDiscountCellContent(currCustomer));
+	discountTC.setCellValueFactory(currCustomer -> this.formatDiscounts(currCustomer));
 	customerTableView.getColumns().add(discountTC);
 	// customerTableView.set
 
@@ -202,7 +202,7 @@ public class KundenverwaltungGUI {
 	customerSubmitButton.setText("Kundendaten bearbeiten");
     }
 
-    private SimpleStringProperty formatPaymentMethodCellContent(CellDataFeatures<Kunde, String> currCustomerCDF) {
+    private SimpleStringProperty formatPaymentMethods(CellDataFeatures<Kunde, String> currCustomerCDF) {
 
 	if (currCustomerCDF.getValue().getZahlungsmittel() != null) {
 	    String resultString = "";
@@ -217,7 +217,7 @@ public class KundenverwaltungGUI {
 	return new SimpleStringProperty("");
     }
 
-    private SimpleStringProperty formatDiscountCellContent(CellDataFeatures<Kunde, String> currCustomerCDF) {
+    private SimpleStringProperty formatDiscounts(CellDataFeatures<Kunde, String> currCustomerCDF) {
 
 	if (currCustomerCDF.getValue().getRabatte() != null) {
 	    String resultString = "";

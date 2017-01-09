@@ -1,30 +1,26 @@
-package de.btu.sst.evs.blatt8.checkIn.kundenverwaltung;
+package de.btu.sst.evs.blatt11.checkIn.kundenverwaltung;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import de.btu.sst.evs.blatt8.checkIn.enums.CheckInKanal;
-import de.btu.sst.evs.blatt8.checkIn.enums.Waehrung;
-import de.btu.sst.evs.blatt8.checkIn.enums.Zahlungskanal;
-import de.btu.sst.evs.blatt8.checkIn.exceptions.KundeNichtGefundenException;
-import de.btu.sst.evs.blatt8.checkIn.exceptions.RabattNichtGefundenException;
-import de.btu.sst.evs.blatt8.checkIn.kundenverwaltung.Kunde;
-
-/**
- * Diese Klasse Kundenverwaltung ist verantwortlich für den Umgang mit allen
- * Kundenobjekten. Das inkludiert alle dazugehörigen Rabatt- sowie
- * Zahlungsmittelobjekte.
- * 
- * @author Mathias Schubanz
- */
+import de.btu.sst.evs.blatt11.checkIn.enums.CheckInKanal;
+import de.btu.sst.evs.blatt11.checkIn.enums.SerializableUID;
+import de.btu.sst.evs.blatt11.checkIn.enums.Waehrung;
+import de.btu.sst.evs.blatt11.checkIn.enums.Zahlungskanal;
+import de.btu.sst.evs.blatt11.checkIn.exceptions.KundeNichtGefundenException;
+import de.btu.sst.evs.blatt11.checkIn.exceptions.RabattNichtGefundenException;
+import de.btu.sst.evs.blatt11.persistence.CSVStorageManager;
 
 public class Kundenverwaltung {
 
-    private KundenSpeicher kundenspeicher;
-    private List<Kunde> kundenstamm;
-    private Map<Long, Kunde> kundenIndex;
+    private CSVStorageManager storageManager;
+    private final KundenSpeicher kundenspeicher;
+    private final List<Kunde> kundenstamm;
+    private final Map<Long, Kunde> kundenIndex;
     private long laufendeKundennummer;
 
     public Kundenverwaltung() {
@@ -32,10 +28,15 @@ public class Kundenverwaltung {
 	this.kundenspeicher = new KundenSpeicher();
 	this.kundenstamm = this.kundenspeicher.getKundenListe();
 	this.kundenIndex = new HashMap<>();
+	this.aktualisiereKundenindex();
+	this.laufendeKundennummer = this.kundenspeicher.getLaufendeKundennummer();
+    }
+
+    private void aktualisiereKundenindex() {
+	this.kundenIndex.clear();
 	for (Kunde currKunde : this.kundenstamm) {
 	    this.kundenIndex.put(currKunde.getKundennummer(), currKunde);
 	}
-	this.laufendeKundennummer = this.kundenspeicher.getLaufendeKundennummer();
     }
 
     public void registriereNeukunde(String name, String vorname, String nationalitaet, String eMail) {
@@ -108,12 +109,12 @@ public class Kundenverwaltung {
 	return -1;
     }
 
-    public void widerrufeRabattFuerEinenKunde(long kundenNr, String rabattCode)
+    public void widerrufeRabattFuerEinenKunde(long kundenNr, String aktionsCode)
 	    throws KundeNichtGefundenException, RabattNichtGefundenException {
 
 	if (this.istBereitsKunde(kundenNr)) {
-	    if (kundenIndex.get(kundenNr).getRabatt(rabattCode) != null) {
-		kundenIndex.get(kundenNr).getRabatt(rabattCode).setWiderrufen(true);
+	    if (kundenIndex.get(kundenNr).getRabatt(aktionsCode) != null) {
+		kundenIndex.get(kundenNr).getRabatt(aktionsCode).setWiderrufen(true);
 	    }
 	    throw new RabattNichtGefundenException("Kunde nicht gefunden");
 	}
@@ -121,11 +122,11 @@ public class Kundenverwaltung {
 	throw new KundeNichtGefundenException("Kunde nicht gefunden");
     }
 
-    public void widerrufeRabattFuerAlleKunden(String rabattCode) {
+    public void widerrufeRabattFuerAlleKunden(String aktionsCode) {
 
 	for (Kunde k : kundenstamm) {
-	    if (k.getRabatt(rabattCode) != null) {
-		k.getRabatt(rabattCode).setWiderrufen(true);
+	    if (k.getRabatt(aktionsCode) != null) {
+		k.getRabatt(aktionsCode).setWiderrufen(true);
 	    }
 	}
     }
@@ -160,34 +161,6 @@ public class Kundenverwaltung {
 	throw new KundeNichtGefundenException("Kunde nicht gefunden");
     }
 
-    // public Zahlungsmittel getPraeferiertesZahlungsmittel(long kundenNr)
-    // throws KundeNichtGefundenException {
-    // if (this.istBereitsKunde(kundenNr)) {
-    // return kundenIndex.get(kundenNr).getPraeferiertesZahlungsmittel();
-    // }
-    //
-    // throw new KundeNichtGefundenException("Kunde nicht gefunden");
-    //
-    // }
-    //
-    // public void setPraeferiertesZahlungsmittel(long kundenNr, Zahlungsmittel
-    // zahlungsmittel)
-    // throws KundeNichtGefundenException, ZahlungsmittelNichtGefundenException
-    // {
-    //
-    // if (this.istBereitsKunde(kundenNr)) {
-    // if
-    // (kundenIndex.get(kundenNr).getZahlungsmittel().contains(zahlungsmittel))
-    // {
-    // kundenIndex.get(kundenNr).setPraeferiertesZahlungsmittel(zahlungsmittel);
-    // return;
-    // }
-    // throw new ZahlungsmittelNichtGefundenException("Kunde nicht gefunden");
-    // }
-    //
-    // throw new KundeNichtGefundenException("Kunde nicht gefunden");
-    // }
-
     private boolean istBereitsKunde(long kundenNr) {
 	return kundenIndex.get(kundenNr) != null;
     }
@@ -196,19 +169,64 @@ public class Kundenverwaltung {
 	return this.kundenstamm;
     }
 
-    public void aktualisiereKundendaten(Long kundenNr, String name, String vorname, String eMail,
-	    String nationalitaet) throws KundeNichtGefundenException {
+    public void aktualisiereKundendaten(Long kundenNr, String name, String vorname, String eMail, String nationalitaet)
+	    throws KundeNichtGefundenException {
 	if (this.istBereitsKunde(kundenNr)) {
 	    Kunde currKunde = kundenIndex.get(kundenNr);
 	    currKunde.setName(name);
 	    currKunde.setVorname(vorname);
 	    currKunde.setEmail(eMail);
 	    currKunde.setNationalitaet(nationalitaet);
-	    
+
 	    return;
-	} 
+	}
 	throw new KundeNichtGefundenException("Kunde nicht gefunden");
 
     }
-    
+
+    public void speichereDaten(File file) {
+	this.getStorageManager().storeObjects(file, this.kundenstamm);
+    }
+
+    /**
+     * Lädt alle Kunden aus einer Datei als Liste von String Arrays. Diese
+     * werden im Anschluss aufgesplittet in die einzelnen Teile der Liste, die
+     * den einzelnen Kunden entsprechen und einzeln deserialisiert.
+     */
+    public void ladeKundenAusDatei(File file) {
+	ArrayList<Kunde> resultList = new ArrayList<>();
+
+	List<String[]> kundenDaten = this.getStorageManager().loadObjects(file);
+	// extract complete customer entries
+	int customerStartIndex = 0;
+	for (int currIndex = 1; currIndex < kundenDaten.size(); currIndex++) {
+	    if (kundenDaten.get(currIndex)[0].equals(SerializableUID.KUNDE.toString())) {
+		deserializeCustomter(kundenDaten, customerStartIndex, currIndex, resultList);
+		customerStartIndex = currIndex;
+	    }
+	}
+	// extract last customer in the last
+	deserializeCustomter(kundenDaten, customerStartIndex, kundenDaten.size(), resultList);
+	this.kundenstamm.clear();
+	this.kundenstamm.addAll(resultList);
+	this.laufendeKundennummer = this.kundenstamm.size();
+	this.aktualisiereKundenindex();
+
+    }
+
+    private void deserializeCustomter(List<String[]> kundenDaten, int customerStartIndex, int customerEndIndex,
+	    ArrayList<Kunde> resultList) {
+	Kunde currKunde = new Kunde();
+	currKunde.deserializeIncludingAggregates(
+		new ArrayList<String[]>(kundenDaten.subList(customerStartIndex, customerEndIndex)));
+	resultList.add(currKunde);
+    }
+
+    private CSVStorageManager getStorageManager() {
+	if (this.storageManager == null) {
+	    this.storageManager = new CSVStorageManager();
+	}
+	return this.storageManager;
+    }
+
 }

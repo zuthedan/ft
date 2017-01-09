@@ -1,0 +1,57 @@
+ 
+
+/*******************************************************************************
+ *                                                                             *
+ * KundenverwaltungsGUI														   * 
+ *                                                                             *
+ *                                                                             *
+ * @author Mathias Schubanz													   * 
+ *                                                                             *
+ ******************************************************************************/
+
+/**** Window buttons: Close, Minimize, Maximize ****/
+
+#titleText {
+	-fx-font-size: 22px;
+	-fx-font-family: "Arial Black";
+	-fx-fill: #818181;
+	-fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+
+#titleTextSmall {
+	-fx-font-size: 16px;
+	-fx-font-family: "Arial Black";
+	-fx-fill: #818181;
+	-fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+
+#password, #userName, #cName, #cFirstName, #cNumber, #cEmail, #cNationality {
+    -fx-font-size: 12px;
+	-fx-font-weight: bold;
+	-fx-fill: #818181;
+	-fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+#helpText, #helpTextHeader {
+	-fx-font-size: 10px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #616161;	
+}
+
+.root {
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 11, 0.0, 3, 3);
+    -fx-border-color: #a3a3a3;
+    -fx-background-color: linear-gradient(#eeeeee, #dddddd 37%, #cccccc);
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Verdana Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#35a4f4, #3158a7);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#3158a7, #35a4f4);
+}

@@ -1,0 +1,31 @@
+The package enums contains enumerations used within the check-in software.
+
+Currently available  
+	* CheckInKanal
+	* Waehrung
+	* Zahlungskanal
+	
+The package exceptions contains exception classes used within the check-in software.
+
+Currently available  
+	* KundeNichtGefundenException
+	* RabattNichtGefundenException
+	
+The package kundenverwaltung contains all relevant java classes to manage customer data for the check-in software
+
+Currently available  
+	* Kunde
+	* Kundenspeicher
+	* Kundenverwaltung
+	* Rabatt
+	* Zahlungsmittel
+	
+Compiling (MacOS / Linux)
+
+Navigate to the blatt11 package folder. Execute the following:
+
+* javac checkIn/gui/*java checkIn/exceptions/*java checkIn/enums/*java checkIn/kundenverwaltung/*java persistence/*java
+
+Navigate to the src folder and execute the following:
+
+* java de.btu.sst.evs.blatt11.checkIn.gui.Main
