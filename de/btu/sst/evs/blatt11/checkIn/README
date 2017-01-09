@@ -24,7 +24,7 @@ Compiling (MacOS / Linux)
 
 Navigate to the blatt11 package folder. Execute the following:
 
-* javac checkIn/gui/*java checkIn/exceptions/*java checkIn/enums/*java checkIn/kundenverwaltung/*java persistence/*java
+* javac -cp .:../../../../../lib/opencsv-3.8.jar checkIn/gui/*java checkIn/exceptions/*java checkIn/enums/*java checkIn/kundenverwaltung/*java persistence/*java
 
 Navigate to the src folder and execute the following:
 
