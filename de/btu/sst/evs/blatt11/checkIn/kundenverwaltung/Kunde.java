@@ -186,7 +186,6 @@ public class Kunde implements ICSV_Serializable {
 		Rabatt currDiscount = new Rabatt();
 		currDiscount.deserialize(serializedValue);
 		this.rabatte.add(currDiscount);
-		// previousDiscount = currDiscount;
 	    } else {
 		System.err.println("Found Unexpected Entry during Deserialization -- " + serializedValue[0]);
 	    }
