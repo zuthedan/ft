@@ -18,9 +18,26 @@ The project currently contains:
 		* package kundenverwaltung
 	* README
 	
-* exercise 10 - task 5, task 6
+* exercise 9 - task 5, task 6
 	* de.btu.sst.evs.blatt10.drawingLib
 		* package shapes
 			* class Point
 			* interface IFigure
 		* jar file containing the drawing library
+		
+* exercise 11 - task 5
+	* de.btu.sst.evs.blatt11
+		* package gui
+			* classes Dialogs, Main, KundenverwaltungsGUI
+			* interface IFigure
+		* package checkIn
+			* classes responsible for managing any customer data
+			* subpackage kundenverwaltung
+			* subpackage enums
+			* subpackage exceptions			
+		* package persistence
+			* classes wrapping the opencsv library
+	* lib
+		* opencsv.jar
+	* data
+		* Beispiel.csv
