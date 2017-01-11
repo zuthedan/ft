@@ -19,7 +19,6 @@ public class Kunde implements ICSV_Serializable {
     private String nationalitaet;
     private CheckInKanal praeferierterCheckInKanal;
     private List<Zahlungsmittel> zahlungsmittel;
-    // private Zahlungsmittel praeferiertesZahlungsmilttel;
     private List<Rabatt> rabatte;
 
     public Kunde(long kundenNr, String eMail, String name, String vorname, String nationalitaet,
