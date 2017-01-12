@@ -29,9 +29,7 @@ public class ButtonExample extends Application {
 
     /**
      * Die Start-Methode ruft die launch() Methode der Applikation auf
-     * 
-     * @param args
-     *            : Eingabeparameter
+     * @param args : Eingabeparameter
      */
     public static void main(String[] args) {
 	launch(args);
