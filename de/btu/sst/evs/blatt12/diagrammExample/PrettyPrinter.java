@@ -155,12 +155,13 @@ public class PrettyPrinter extends Application {
     }
 
     private void toggleTimePrintingFormat() {
+	// set value
+	this.toggleValue(isPrinting24HourFormat);
+	// set formatting
 	if (this.isPrinting24HourFormat.get() == true) {
-	    this.isPrinting24HourFormat.set(false);
-	    timeFormatter.setTimeFormat(TimeFormat.TWELVE_HOUR_FORMAT);
-	} else {
-	    this.isPrinting24HourFormat.set(true);
 	    timeFormatter.setTimeFormat(TimeFormat.TWENTYFOUR_HOUR_FORMAT);
+	} else {
+	    timeFormatter.setTimeFormat(TimeFormat.TWELVE_HOUR_FORMAT);
 	}
     }
 
