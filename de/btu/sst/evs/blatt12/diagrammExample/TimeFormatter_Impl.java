@@ -10,8 +10,8 @@ public class TimeFormatter_Impl implements ITimeFormatter {
 
     public TimeFormatter_Impl() {
 	super();
-	this.timeFormat = TimeFormat.TWENTYFOUR_HOUR_FORMAT;
-	formatter = DateTimeFormatter.ofPattern("kk:mm:ss");
+	this.timeFormat = TimeFormat.TWELVE_HOUR_FORMAT;
+	formatter = DateTimeFormatter.ofPattern("KK:mm:ss");
     }
 
     @Override

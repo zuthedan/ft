@@ -102,8 +102,8 @@ public class PrettyPrinter extends Application {
 
 	final ToggleSwitch timeFormatToggle = new ToggleSwitch(40, 20, false);
 	timeFormatToggle.switchedOnProperty().addListener(event -> toggleTimePrintingFormat());
-	// layout the first toggle button and put it into place
-	HBox timeFormatToggleBox = this.layoutToggleSwitch(timeFormatToggle, "Format - 12 Hour", "Format - 24 Hour");
+	// layout the top most toggle button and put it into place
+	HBox timeFormatToggleBox = this.layoutToggleSwitch(timeFormatToggle, "Format - 24 Hour", "Format - 12 Hour");
 	allSwitches.getChildren().add(timeFormatToggleBox);
 
 	final ToggleSwitch timeToggle = new ToggleSwitch(40, 20, true);
@@ -112,19 +112,19 @@ public class PrettyPrinter extends Application {
 	    // TODO
 	    // timeFormatToggle.setDisable(!this.isPrintingTime.get());
 	});
-	// layout the first toggle button and put it into place
+	// layout the second toggle button and put it into place
 	allSwitches.getChildren()
 		.add(this.layoutToggleSwitch(timeToggle, "Time printing - ON ", "Time printing - OFF "));
 
 	final ToggleSwitch dateToggle = new ToggleSwitch(40, 20, true);
 	dateToggle.switchedOnProperty().addListener(event -> toggleValue(this.isPrintingDate));
-	// layout the first toggle button and put it into place
+	// layout the third toggle button and put it into place
 	allSwitches.getChildren()
 		.add(this.layoutToggleSwitch(dateToggle, "Date printing - ON ", "Date printing - OFF "));
 
 	final ToggleSwitch speedToggle = new ToggleSwitch(40, 20, false);
 	speedToggle.switchedOnProperty().addListener(event -> this.togglePrintSpeed());
-	// layout the first toggle button and put it into place
+	// layout the fourth toggle button and put it into place
 	allSwitches.getChildren()
 		.add(this.layoutToggleSwitch(speedToggle, "Printing speed - FAST", "Printing speed - SLOW"));
 
@@ -132,7 +132,7 @@ public class PrettyPrinter extends Application {
 	Scene scene = new Scene(root);
 	// TODO
 	// scene.getStylesheets().add("/styles/****.css");
-	stage.setTitle("Date and Time Formatter");
+	stage.setTitle("Date and Time Pretty-Printer");
 	stage.setScene(scene);
 	stage.show();
 
