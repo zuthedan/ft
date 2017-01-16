@@ -1,4 +1,4 @@
-package de.btu.sst.evs.blatt12.diagrammExample;
+package de.btu.sst.evs.blatt12.diagrammExample.ui;
 
 import javafx.animation.FillTransition;
 import javafx.animation.ParallelTransition;
