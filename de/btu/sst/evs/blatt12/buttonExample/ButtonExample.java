@@ -1,4 +1,4 @@
-package de.btu.sst.evs.blatt12;
+package de.btu.sst.evs.blatt12.buttonExample;
 
 import javafx.application.Application;
 import javafx.event.Event;
