@@ -1,4 +1,4 @@
-package de.btu.sst.evs.blatt12.classDiagrammExample;
+package de.btu.sst.evs.blatt12.diagrammExample;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
