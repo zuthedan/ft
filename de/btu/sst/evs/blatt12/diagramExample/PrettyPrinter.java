@@ -141,7 +141,7 @@ public class PrettyPrinter extends Application {
 	final ComboBox<String> dateFormatSelector = new ComboBox<>();
 	dateFormatSelector.setOnAction(
 		event -> this.changeDateFormatRepresentation(dateFormatSelector.getSelectionModel().getSelectedItem()));
-	dateFormatSelector.getItems().addAll("US_Format", "German_Format", "British_Format");
+	dateFormatSelector.getItems().addAll("US Format", "German Format", "British Format");
 	dateFormatSelector.getSelectionModel().select(2);
 	// layout the combo box at the top end of the VBox
 	final Text text = new Text("Date printing format");
@@ -175,7 +175,7 @@ public class PrettyPrinter extends Application {
     }
 
     private void changeDateFormatRepresentation(String selectedItem) {
-	this.dateFormatter.setDateFormat(DateFormat.valueOf(selectedItem.toUpperCase()));
+	this.dateFormatter.setDateFormat(DateFormat.valueOf(selectedItem.toUpperCase().replace(" ", "_")));
     }
 
     private void toggleButtonText() {
