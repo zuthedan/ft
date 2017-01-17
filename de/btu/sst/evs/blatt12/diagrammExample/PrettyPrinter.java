@@ -7,9 +7,13 @@ import de.btu.sst.evs.blatt12.diagrammExample.ui.ToggleSwitch;
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Separator;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -74,8 +78,8 @@ public class PrettyPrinter extends Application {
 	this.isPrinting = new AtomicBoolean(false);
 	this.isPrintingDate = new AtomicBoolean(true);
 	this.isPrintingTime = new AtomicBoolean(true);
-	this.waitTime = new AtomicInteger(SLOW_PRINTING);
-	this.dateFormatter = new DateFormatter_Impl();
+	this.waitTime = new AtomicInteger(FAST_PRINTING);
+	this.dateFormatter = new DateFormatter_Impl(DateFormat.BRITISH_FORMAT);
 	this.timeFormatter = new TimeFormatter_Impl();
     }
 
@@ -100,12 +104,6 @@ public class PrettyPrinter extends Application {
 	// vertical box for all switches
 	final VBox allSwitches = new VBox(-10);
 
-	final ToggleSwitch timeFormatToggle = new ToggleSwitch(40, 20, false);
-	timeFormatToggle.switchedOnProperty().addListener(event -> toggleTimePrintingFormat());
-	// layout the top most toggle button and put it into place
-	HBox timeFormatToggleBox = this.layoutToggleSwitch(timeFormatToggle, "Format - 24 Hour", "Format - 12 Hour");
-	allSwitches.getChildren().add(timeFormatToggleBox);
-
 	final ToggleSwitch timeToggle = new ToggleSwitch(40, 20, true);
 	timeToggle.switchedOnProperty().addListener(event -> {
 	    toggleValue(this.isPrintingTime);
@@ -122,11 +120,40 @@ public class PrettyPrinter extends Application {
 	allSwitches.getChildren()
 		.add(this.layoutToggleSwitch(dateToggle, "Date printing - ON ", "Date printing - OFF "));
 
-	final ToggleSwitch speedToggle = new ToggleSwitch(40, 20, false);
+	final ToggleSwitch speedToggle = new ToggleSwitch(40, 20, true);
 	speedToggle.switchedOnProperty().addListener(event -> this.togglePrintSpeed());
 	// layout the fourth toggle button and put it into place
 	allSwitches.getChildren()
 		.add(this.layoutToggleSwitch(speedToggle, "Printing speed - FAST", "Printing speed - SLOW"));
+
+	final Separator sep = new Separator(Orientation.HORIZONTAL);
+	sep.setPadding(new Insets(10));
+	sep.setValignment(VPos.CENTER);
+	sep.setPrefHeight(3);
+	allSwitches.getChildren().add(sep);
+
+	final ToggleSwitch timeFormatToggle = new ToggleSwitch(40, 20, false);
+	timeFormatToggle.switchedOnProperty().addListener(event -> toggleTimePrintingFormat());
+	// layout the top most toggle button and put it into place
+	HBox timeFormatToggleBox = this.layoutToggleSwitch(timeFormatToggle, "Time Format - 24 Hour", "Time Format - 12 Hour");
+	allSwitches.getChildren().add(timeFormatToggleBox);
+
+	final ComboBox<String> dateFormatSelector = new ComboBox<>();
+	dateFormatSelector.setOnAction(
+		event -> this.changeDateFormatRepresentation(dateFormatSelector.getSelectionModel().getSelectedItem()));
+	dateFormatSelector.getItems().addAll("US_Format", "German_Format", "British_Format");
+	dateFormatSelector.getSelectionModel().select(2);
+	// layout the combo box at the top end of the VBox
+	final Text text = new Text("Date printing format");
+	final HBox textBox = new HBox(text);
+	textBox.setAlignment(Pos.CENTER_LEFT);
+	final HBox comboBoxHBox = new HBox(dateFormatSelector);
+	comboBoxHBox.setAlignment(Pos.CENTER_RIGHT);
+	final HBox boundingBox = new HBox();
+	boundingBox.getChildren().addAll(textBox, comboBoxHBox);
+	boundingBox.setPadding(new Insets(10));
+	// add the bounding box to the surrounding allSwitches Box
+	allSwitches.getChildren().add(boundingBox);
 
 	root.setTop(allSwitches);
 	Scene scene = new Scene(root);
@@ -137,12 +164,18 @@ public class PrettyPrinter extends Application {
 	stage.show();
 
 	allSwitches.getChildren().forEach(child -> {
-	    HBox currHBox = ((HBox) child);
-	    currHBox.setPrefWidth(root.getWidth());
-	    currHBox.getChildren().forEach(childOfHBox -> {
-		((HBox) childOfHBox).setPrefWidth(currHBox.getPrefWidth());
-	    });
+	    if (child instanceof HBox) {
+		HBox currHBox = ((HBox) child);
+		currHBox.setPrefWidth(root.getWidth());
+		currHBox.getChildren().forEach(childOfHBox -> {
+		    ((HBox) childOfHBox).setPrefWidth(currHBox.getPrefWidth());
+		});
+	    }
 	});
+    }
+
+    private void changeDateFormatRepresentation(String selectedItem) {
+	this.dateFormatter.setDateFormat(DateFormat.valueOf(selectedItem.toUpperCase()));
     }
 
     private void toggleButtonText() {
