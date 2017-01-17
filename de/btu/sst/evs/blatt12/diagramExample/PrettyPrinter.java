@@ -26,7 +26,6 @@ public class PrettyPrinter extends Application {
     private static final int SLOW_PRINTING = 3000;
     private static final int FAST_PRINTING = 1000;
 
-    private Button btnStartStop;
     private TextArea textArea;
     private ITimeFormatter timeFormatter;
     private IDateFormatter dateFormatter;
@@ -90,10 +89,10 @@ public class PrettyPrinter extends Application {
 	final BorderPane root = new BorderPane();
 	this.textArea = new TextArea();
 	root.setCenter(textArea);
-	btnStartStop = new Button("Start");
+	Button btnStartStop = new Button("Start");
 	btnStartStop.setOnAction(event -> {
 	    this.toggleValue(this.isPrinting);
-	    this.toggleButtonText();
+	    this.toggleButtonText(btnStartStop);
 	});
 	final HBox buttonBox = new HBox(10);
 	buttonBox.setAlignment(Pos.CENTER_RIGHT);
@@ -178,11 +177,11 @@ public class PrettyPrinter extends Application {
 	this.dateFormatter.setDateFormat(DateFormat.valueOf(selectedItem.toUpperCase().replace(" ", "_")));
     }
 
-    private void toggleButtonText() {
+    private void toggleButtonText(Button button) {
 	if (this.isPrinting.get() == true) {
-	    this.btnStartStop.setText("Stop");
+	    button.setText("Stop");
 	} else {
-	    this.btnStartStop.setText("Start");
+	    button.setText("Start");
 	}
 
     }
