@@ -9,9 +9,12 @@ public class DateFormatter_Impl implements IDateFormatter {
     private DateTimeFormatter formatter;
 
     public DateFormatter_Impl() {
+	this(DateFormat.GERMAN_FORMAT);
+    }
+
+    public DateFormatter_Impl(DateFormat format) {
 	super();
-	this.dateFormat = DateFormat.GERMAN_FORMAT;
-	formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+	this.setDateFormat(format);
     }
 
     @Override
@@ -25,10 +28,10 @@ public class DateFormatter_Impl implements IDateFormatter {
 	this.dateFormat = format;
 	if (this.dateFormat == DateFormat.GERMAN_FORMAT) {
 	    formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-	} else if (this.dateFormat == DateFormat.GERMAN_FORMAT) {
-	    formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+	} else if (this.dateFormat == DateFormat.BRITISH_FORMAT) {
+	    formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
 	} else {
-	    formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+	    formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 	}
     }
 
