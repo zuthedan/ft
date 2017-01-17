@@ -1,9 +1,9 @@
-package de.btu.sst.evs.blatt12.diagrammExample;
+package de.btu.sst.evs.blatt12.diagramExample;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import de.btu.sst.evs.blatt12.diagrammExample.ui.ToggleSwitch;
+import de.btu.sst.evs.blatt12.diagramExample.ui.ToggleSwitch;
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
 import javafx.geometry.Insets;

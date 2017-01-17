@@ -1,4 +1,4 @@
-package de.btu.sst.evs.blatt12.diagrammExample;
+package de.btu.sst.evs.blatt12.diagramExample;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

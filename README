@@ -41,3 +41,10 @@ The project currently contains:
 		* opencsv.jar
 	* data
 		* Beispiel.csv
+		
+* exercise 12 - task 2
+	* de.btu.sst.evs.blatt12.buttonExample
+		* class ButtonExample
+* exercise 12 - task 4
+	* de.btu.sst.evs.blatt12.diagramExample
+		* Main class PrettyPrinter

@@ -1,0 +1,22 @@
+This package contains all required classes in order to work on task 4, exercise sheet 12
+
+	* PrettyPrinter
+	* ITimeFormatter
+	* TimeFormatter_Impl
+	* IDateFormatter
+	* DateFormatter_Impl
+	
+	* Enums
+		* DateFormat
+		* TimeFormat 
+	
+	
+Compiling (MacOS / Linux)
+
+Navigate to the blatt12 package folder. Execute the following:
+
+* javac diagramExample/ui/*java diagramExample/*java 
+
+Navigate to the src folder and execute the following:
+
+* java de.btu.sst.evs.blatt12.diagramExample.PrettyPrinter
