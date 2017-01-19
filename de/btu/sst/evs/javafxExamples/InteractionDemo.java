@@ -17,6 +17,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -41,8 +42,15 @@ public class InteractionDemo extends Application {
 		"Listeneintrag 3");
 	listView.setItems(items);
 
-	Button btn = new Button("Schließen");
-	btn.setOnMouseClicked(buttonClickedEvent -> System.exit(0));
+	Button btnAdd = new Button("Element hinzufügen");
+	btnAdd.setOnAction(event -> this.addElem(items, textField.getText()));
+	Button btnRemove = new Button("Element löschen");
+	btnRemove.setOnAction(event -> this.removeElem(items));
+	Button btnClose = new Button("Schließen");
+	btnClose.setOnAction(event -> System.exit(0));
+	
+	HBox btnBox = new HBox(10);
+	btnBox.getChildren().addAll(btnAdd, btnRemove, btnClose);
 
 	// setting the menu
 	MenuBar menuBar = new MenuBar();
@@ -56,7 +64,7 @@ public class InteractionDemo extends Application {
 	vBoxCenter.setPadding(new Insets(10));
 	vBoxCenter.setAlignment(Pos.CENTER);
 	// order of elements is important
-	vBoxCenter.getChildren().addAll(label, textField, checkBox, radioOne, radioTwo, listView, btn);
+	vBoxCenter.getChildren().addAll(label, textField, checkBox, radioOne, radioTwo, listView, btnBox);
 
 	BorderPane root = new BorderPane();
 	root.setCenter(vBoxCenter);
@@ -74,5 +82,16 @@ public class InteractionDemo extends Application {
     public static void main(String[] args) {
 	launch(args);
     }
+    
+    private void removeElem(ObservableList<String> items) {
+	if (!items.isEmpty()) {
+	    items.remove(items.size() - 1);
+	}
+    }
+
+    private void addElem(ObservableList<String> items, String text) {
+	items.add(text);
+    }
+
 
 }
