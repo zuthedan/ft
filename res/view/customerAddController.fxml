@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox minWidth="745.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.btu.sst.evs.blatt14.ui.content.CustomerAddController">
+   <children>
+      <HBox>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kundendaten bearbeiten">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <GridPane hgap="85.0" vgap="10.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints />
+          <RowConstraints />
+          <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Kundennummer">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="customerNumber" disable="true" editable="false" text="Wird automatisch vergeben" GridPane.columnIndex="1" />
+            <Label layoutX="10.0" layoutY="15.0" text="Vorname" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="customerFirstName" layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label layoutX="10.0" layoutY="10.0" text="Name" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="customerName" GridPane.columnIndex="1" GridPane.rowIndex="2" />            
+            <Label layoutX="10.0" layoutY="15.0" text="eMail" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="customerMail" layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="customerNationality" layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label layoutX="10.0" layoutY="15.0" text="Nationalität" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="customerCheckInChannel" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" />
+            <Label text="Präf. Check-In Kanal" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </GridPane>
+      <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="discountView" editable="true" prefHeight="150.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <columns>
+                  <TableColumn fx:id="discountEventName" minWidth="172.0" prefWidth="-1.0" text="Aktionsname" />
+                  <TableColumn fx:id="discountAmount" minWidth="170.0" prefWidth="-1.0" text="Rabattmenge" />
+                  <TableColumn fx:id="discountCurrency" minWidth="170.0" prefWidth="-1.0" text="Währung" />
+                  <TableColumn fx:id="discountCode" minWidth="172.0" prefWidth="-1.0" text="Code" />
+               </columns>
+            </TableView>
+            <VBox spacing="10.0">
+               <children>
+                  <Button fx:id="addDiscountBtn" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#onAddDiscountClicked">
+                     <graphic>
+                        <ImageView fx:id="addDiscountImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="removeDiscountBtn" disable="true" layoutX="10.0" layoutY="10.0" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#onRemoveDiscountClicked">
+                     <graphic>
+                        <ImageView fx:id="removeDiscountImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="paymentView" editable="true" layoutX="20.0" layoutY="164.0" prefHeight="150.0" VBox.vgrow="ALWAYS">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <columns>
+                  <TableColumn fx:id="paymentChannel" minWidth="142.0" prefWidth="-1.0" text="Zahlungskanal" />
+                  <TableColumn fx:id="paymentAccountOwner" minWidth="142.0" prefWidth="-1.0" text="Kontobesitzer" />
+                  <TableColumn fx:id="paymentAccountNumber" minWidth="200.0" prefWidth="-1.0" text="Kontonummer" />
+                  <TableColumn fx:id="paymentWithdrawAllowance" minWidth="200.0" prefWidth="-1.0" text="Genehmigungsvermerk" />
+               </columns>
+            </TableView>
+            <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="addPaymentBtn" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#onAddPaymentClicked">
+                     <graphic>
+                        <ImageView fx:id="addPaymentImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="removePaymentBtn" disable="true" layoutX="10.0" layoutY="10.0" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#onRemovePaymentClicked">
+                     <graphic>
+                        <ImageView fx:id="removePaymentImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onAddCustomerClicked" text="Kunde registrieren" />
+            <Button mnemonicParsing="false" onAction="#onCancelClicked" text="Abbrechen" />
+         </children>
+         <padding>
+            <Insets right="34.0" />
+         </padding>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="15.0" top="10.0" />
+   </padding>
+</VBox>
