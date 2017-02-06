@@ -1,6 +1,7 @@
 package de.btu.sst.evs.blatt14.ui.content;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import de.btu.sst.evs.blatt11.checkIn.enums.CheckInKanal;
@@ -209,9 +210,27 @@ public class CustomerDataController implements Initializable {
     if (this.customerNumber.getText().isEmpty() == true) {
       Dialogs.showErrorDialog("Bitte wählen Sie vorab einen Kunden aus\nder Übersicht aus!");
     } else {
-      this.customerManagement.aktualisiereKundendaten(Long.valueOf(this.customerNumber.getText()),
-	  this.customerName.getText(), this.customerFirstName.getText(), this.customerMail.getText(),
-	  this.customerNationality.getText(), this.customerCheckInChannel.getSelectionModel().getSelectedItem());
+
+      Long currCustomerNumber = Long.valueOf(this.customerNumber.getText());
+
+      this.customerManagement.aktualisiereKundendaten(currCustomerNumber, this.customerName.getText(),
+	  this.customerFirstName.getText(), this.customerMail.getText(), this.customerNationality.getText(),
+	  this.customerCheckInChannel.getSelectionModel().getSelectedItem());
+
+      // Zahlungsmittel aktualisieren
+      List<Zahlungsmittel> oldPaymentMethods = this.customerManagement.getZahlungsmittel(currCustomerNumber);
+      List<Zahlungsmittel> newPaymentMethods = this.paymentView.getItems();
+      oldPaymentMethods.clear();
+      oldPaymentMethods.addAll(newPaymentMethods);
+
+      // Rabatte aktualisieren
+      List<Rabatt> oldDiscounts = this.customerManagement.getRabatt(currCustomerNumber);
+      List<Rabatt> newDiscounts = this.discountView.getItems();
+      oldDiscounts.clear();
+      oldDiscounts.addAll(newDiscounts);
+      BerlinAirApp.getMainWindowController()
+	  .showCustomerListView(this.customerManagement.ladeKundendaten(Long.valueOf(this.customerNumber.getText())));
+
       BerlinAirApp.getMainWindowController()
 	  .showCustomerListView(this.customerManagement.ladeKundendaten(Long.valueOf(this.customerNumber.getText())));
     }

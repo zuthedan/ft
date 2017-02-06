@@ -43,7 +43,8 @@ public class Kundenverwaltung {
     }
   }
 
-  public Kunde registriereNeukunde(String name, String vorname, String nationalitaet, String eMail, CheckInKanal checkInKanal) {
+  public Kunde registriereNeukunde(String name, String vorname, String nationalitaet, String eMail,
+      CheckInKanal checkInKanal) {
     Kunde neuKunde = new Kunde(this.laufendeKundennummer++, eMail, name, vorname, nationalitaet, checkInKanal);
     kundenstamm.add(neuKunde);
     kundenIndex.put(neuKunde.getKundennummer(), neuKunde);
@@ -160,6 +161,15 @@ public class Kundenverwaltung {
 
     if (this.istBereitsKunde(kundenNr)) {
       return kundenIndex.get(kundenNr).getZahlungsmittel();
+    }
+
+    throw new KundeNichtGefundenException("Kunde nicht gefunden");
+  }
+
+  public List<Rabatt> getRabatt(long kundenNr) throws KundeNichtGefundenException {
+
+    if (this.istBereitsKunde(kundenNr)) {
+      return kundenIndex.get(kundenNr).getRabatte();
     }
 
     throw new KundeNichtGefundenException("Kunde nicht gefunden");
