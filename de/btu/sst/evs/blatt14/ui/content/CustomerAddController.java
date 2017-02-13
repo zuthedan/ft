@@ -199,6 +199,8 @@ public class CustomerAddController implements Initializable {
        * (discountView) dem Kunden hinzugefügt werden. Die Zahlungsmittel
        * (paymentView) müssen dem Kunden ebenso hinzugefügt werden.
        * 
+       * Bitte schauen Sie sich zur Lösung nochmal die Klasse Kundenverwaltung
+       * genau an.
        * 
        * ************************** EvS Aufgabe 2 **************************
        */
@@ -207,7 +209,8 @@ public class CustomerAddController implements Initializable {
 	  .showCustomerListView(/**
 				 * Hier muss die Referenz des neuen
 				 * Kunden-Objekts übergeben werden
-				 */);
+				 */
+      );
       this.clearElements();
     }
   }
