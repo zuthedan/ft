@@ -130,8 +130,6 @@ public class CustomerListController implements Initializable {
   public void refreshViews() {
     this.observableCustomerList.clear();
     this.observableCustomerList.addAll(this.customerManagement.getKunden());
-//    this.customerView.getItems().clear();
-    
   }
 
   public void setSelectedCustomer(Kunde selectedCustomer) {
