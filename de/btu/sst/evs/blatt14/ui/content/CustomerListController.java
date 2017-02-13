@@ -40,7 +40,7 @@ public class CustomerListController implements Initializable {
   private Button editCustomer;
 
   @FXML
-  private TableView<Kunde> customerList;
+  private TableView<Kunde> customerView;
   @FXML
   private TableColumn<Kunde, String> nameTC;
   @FXML
@@ -70,7 +70,7 @@ public class CustomerListController implements Initializable {
 
     BerlinAirApp.setCustomerListController(this);
 
-    this.customerList.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+    this.customerView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
       this.editCustomer.setDisable(newValue == null);
     });
 
@@ -84,7 +84,7 @@ public class CustomerListController implements Initializable {
 
     this.customerManagement = BerlinAirApp.getCustomerManagement();
     this.observableCustomerList = FXCollections.observableArrayList(this.customerManagement.getKunden());
-    this.customerList.setItems(this.observableCustomerList);
+    this.customerView.setItems(this.observableCustomerList);
   }
 
   private SimpleStringProperty formatPaymentMethod(CellDataFeatures<Kunde, String> currCustomerCDF) {
@@ -119,7 +119,7 @@ public class CustomerListController implements Initializable {
 
   public void onCustomerSelected() throws Exception {
     BerlinAirApp.getMainWindowController()
-	.setCurrentlySelectedCustomer(this.customerList.getSelectionModel().getSelectedItem());
+	.setCurrentlySelectedCustomer(this.customerView.getSelectionModel().getSelectedItem());
     BerlinAirApp.getMainWindowController().showCustomerDataView();
   }
 
@@ -128,11 +128,13 @@ public class CustomerListController implements Initializable {
   }
 
   public void refreshViews() {
-    this.customerList.getItems().clear();
-    this.customerList.getItems().addAll(this.customerManagement.getKunden());
+    this.observableCustomerList.clear();
+    this.observableCustomerList.addAll(this.customerManagement.getKunden());
+//    this.customerView.getItems().clear();
+    
   }
 
   public void setSelectedCustomer(Kunde selectedCustomer) {
-    this.customerList.getSelectionModel().select(selectedCustomer);
+    this.customerView.getSelectionModel().select(selectedCustomer);
   }
 }
