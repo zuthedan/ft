@@ -72,7 +72,7 @@ public class Controller implements Initializable {
     BerlinAirApp.getPrimaryStage().widthProperty().addListener(width -> this.resizeStackPane());
     BerlinAirApp.setMainController(this);
 
-    BerlinAirApp.getCustomerManagement().ladeKundenAusDatei(new File("data/Beispiel.csv"));
+//    BerlinAirApp.getCustomerManagement().ladeKundenAusDatei(new File("data/Beispiel.csv"));
     this.refreshViews();
   }
 
