@@ -1,4 +1,4 @@
-# README #
+# Exercise sheet 2 - Task 7  #
 
 In order to compile the file 
 
