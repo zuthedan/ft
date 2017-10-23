@@ -27,4 +27,4 @@ Windows:
 
 In the above commands \<PATH_TO_JFXRT.JAR\> needs to be replaced by the concrete path to the corresponding file.
 
-If you have any trouble compiling the software, please consult Mathias Schubanz at M.Schubanz@b-tu.de
+If you have any trouble compiling the software, please consult Mathias Schubanz at [M.Schubanz@b-tu.de](mailto:M.Schubanz@b-tu.de)
