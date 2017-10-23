@@ -1,4 +1,3 @@
-
 # README #
 
 In order to compile the file 
@@ -11,20 +10,20 @@ you need the JavaFX library. Please make sure that you can run JavaFX programs. 
 
 Use the following commands for compiling the program, if you use an Oracle JDK:
 
-javac TimeFormatter.java
-java TimeFormatter
+* javac TimeFormatter.java
+* java TimeFormatter
 
 ### Compile and Run - Open JDK + OpenJFX ####
 
 If you use an Open JDK including the OpenJFX RCP, you need to include the "jfxrt.jar" file from your JDK/JRE libraries into the classpath 
 
 Linux / MacOS:
-javac -cp .:"\<PATH_TO_JFXRT.JAR\>" TimeFormatter.java
-java TimeFormatter
+* javac -cp .:"\<PATH_TO_JFXRT.JAR\>" TimeFormatter.java
+* java TimeFormatter
 
 Windows:  
-javac -cp .;"\<PATH_TO_JFXRT.JAR\>" TimeFormatter.java
-java TimeFormatter
+* javac -cp .;"\<PATH_TO_JFXRT.JAR\>" TimeFormatter.java
+* java TimeFormatter
 
 In the above commands \<PATH_TO_JFXRT.JAR\> needs to be replaced by the concrete path to the corresponding file.
 
