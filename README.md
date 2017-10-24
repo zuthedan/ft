@@ -6,7 +6,7 @@ The project currently contains:
 
 ### Exercise sheet 2 - task 7
 * de.btu.sst.evs.blatt2
-    * TimeFormatter.java
+    * [TimeFormatter.java](de/btu/sst/evs/blatt2/TimeFormatter.java)
 
 ### Exercise sheet 3 - task 1
 * de.btu.sst.evs.blatt3
