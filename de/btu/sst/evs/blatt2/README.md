@@ -1,19 +1,26 @@
-# Exercise sheet 2 - Task 7  #
+# Exercise sheet 2 - Task 7  
 
 In order to compile the file 
 
 * TimeFormatter.java
  
-you need the JavaFX library. Please make sure that you can run JavaFX programs. This should be the case if you are running an Oracle Java Development Kit 8 (JDK) update 40 or higher. If you run the Open JDK please make sure that you installed JavaFX separately (e.g. by installing the OpenJFX RCP). 
+you need the JavaFX library. Please make sure that you can run JavaFX programs. This should be the case if you are running an Oracle Java Development Kit 8 (JDK) update 40 or higher. If you run the Open JDK please make sure that you installed JavaFX separately (e.g. by installing the OpenJFX). 
 
-### Compile and Run - Oracle JDK ####
+## Compile and Run 
+
+When you compile a java file with a package declaration you have to compile it from the projec's root directory. For our TimeFormatter this means, navigate to [the project's root](https://git.informatik.tu-cottbus.de/schubmat/Entwicklung_von_Softwaresystemen/tree/master) on the command line interface. Subsequently, compile the file as follows (assuming JavaFX is running as you are running the Oracle JDK 9): 
+
+* javac de/btu/sst/evs/blatt2/TimeFormatter.java
+
+
+## Compile and Run - Oracle JDK 
 
 Use the following commands for compiling the program, if you use an Oracle JDK:
 
-* javac TimeFormatter.java
+
 * java TimeFormatter
 
-### Compile and Run - Open JDK + OpenJFX ####
+## Compile and Run - Open JDK + OpenJFX
 
 If you use an Open JDK including the OpenJFX RCP, you need to include the "jfxrt.jar" file from your JDK/JRE libraries into the classpath 
 
