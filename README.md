@@ -4,27 +4,27 @@ This project is intended for the exchange of source code files used in the exerc
 
 The project currently contains:
 
-### Exercise sheet 2 - task 7
+## Exercise sheet 2 - task 7
 * de.btu.sst.evs.blatt2
     * [TimeFormatter.java](de/btu/sst/evs/blatt2/TimeFormatter.java)
 
-### Exercise sheet 3 - task 1
+## Exercise sheet 3 - task 1
 * de.btu.sst.evs.blatt3
 
-### Exercise sheet 8 - task 4
+## Exercise sheet 8 - task 4
 * de.btu.sst.evs.blatt8.checkIn
 	* package enums
 	* package exceptions
 	* package kundenverwaltung
 
-### Exercise sheet 9 - task 5, task 6
+## Exercise sheet 9 - task 5, task 6
 * de.btu.sst.evs.blatt10.drawingLib
 	* package shapes
 		* class Point
 		* interface IFigure
 	* jar file containing the drawing library
 
-### Exercise sheet 11 - task 5
+## Exercise sheet 11 - task 5
 * de.btu.sst.evs.blatt11
 	* package gui
 		* classes Dialogs, Main, KundenverwaltungsGUI
@@ -41,10 +41,10 @@ The project currently contains:
 * data
 	* Beispiel.csv
 
-### Exercise sheet 12 - task 2
+## Exercise sheet 12 - task 2
 * de.btu.sst.evs.blatt12.buttonExample
 	* class ButtonExample
 
-### Exercise sheet 12 - task 4
+## Exercise sheet 12 - task 4
 * de.btu.sst.evs.blatt12.diagramExample
 		* Main class PrettyPrinter
