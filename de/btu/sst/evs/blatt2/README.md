@@ -1,6 +1,6 @@
 # Exercise sheet 2 - Task 7  
 
-The class `TimeFormatter` provides you with a graphical user interface to pass a number of seconds which then has to be transformed into the required format. Your contribution should be made exactly where you see the "TODO" markers in the code. These are in the following two methods:
+The class `TimeFormatter` provides you with a graphical user interface to pass a number of seconds which then has to be transformed into the required format. Your contribution should be made exactly where you see the `TODO` comments in the code. These are in the following two methods:
 
 * `private boolean isNumeric(String str)` 
     *  This method checks whether a given string is a numeric value. The result is returned as a boolean value.
