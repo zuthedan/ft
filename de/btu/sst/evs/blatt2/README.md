@@ -14,7 +14,11 @@ Go [the project's root folder](https://git.informatik.tu-cottbus.de/schubmat/Ent
 
 * `git clone https://git.informatik.tu-cottbus.de/schubmat/Entwicklung_von_Softwaresystemen.git`
 
-This will clone the project into your local workspace. In order to compile and run the software, follow the following instructions.
+This will clone the project into your local workspace. If you want to checkout the whole project into an IDE only refer to the repository URL:
+
+* `https://git.informatik.tu-cottbus.de/schubmat/Entwicklung_von_Softwaresystemen.git`
+
+In order to compile and run the software, follow the instructions in the following sections.
 
 ## Compile and Run 
 
