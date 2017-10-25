@@ -8,7 +8,7 @@ The class `TimeFormatter` provides you with a graphical user interface to pass a
     * This method transforms a given integer into a string. The result string has to be formatted as described in the exercise sheet. 
 
 
-## Clone the project to you local machine
+## Clone the project to your local machine
 
 Go [the project's root folder](https://git.informatik.tu-cottbus.de/schubmat/Entwicklung_von_Softwaresystemen/) and copy git project URL (linked [here](https://git.informatik.tu-cottbus.de/schubmat/Entwicklung_von_Softwaresystemen.git)). Open a git client and clone that URL to your machine. If you use the command line interface (cli) navigate to your workspace or the space where you want the code to be and type the folliwing:
 
