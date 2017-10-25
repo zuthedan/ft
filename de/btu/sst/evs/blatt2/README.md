@@ -32,7 +32,7 @@ When you compile a java file with a package declaration you have to compile it f
 
 * `javac de/btu/sst/evs/blatt2/TimeFormatter.java`
 
-The folder structure exactly matches the package declaration. If it doesn't, you will fail to compile the java file. As soon as it compiles without errors,  start the program as follows:
+The folder structure exactly matches the package declaration. If it doesn't, you will fail to compile the java file. As soon as it compiles without errors,  start the program as follows (analogous to the package declaration):
 
 * `java de.btu.sst.evs.blatt2.TimeFormatter`
 
