@@ -1,6 +1,6 @@
 # Exercise sheet 2 - Task 7  
 
-The class `TimeFormatter` provides you with a graphical user interface to pass a number of seconds which then has to be transformed into the required format. Your contribution should be made exactly where you see the `TODO` comments in the code. These are in the following two methods:
+The class `TimeFormatter` provides you with a graphical user interface to pass a number of seconds which then has to be transformed into the required format. Your contribution should be made exactly where you see the `TODO` comments in the code. These are the following two methods:
 
 * `private boolean isNumeric(String str)` 
     *  This method checks whether a given string is a numeric value. The result is returned as a boolean value.
@@ -10,11 +10,11 @@ The class `TimeFormatter` provides you with a graphical user interface to pass a
 
 ## Clone the project to your local machine
 
-Go [the project's root folder](https://git.informatik.tu-cottbus.de/schubmat/Entwicklung_von_Softwaresystemen/) and copy git project URL (linked [here](https://git.informatik.tu-cottbus.de/schubmat/Entwicklung_von_Softwaresystemen.git)). Open a git client and clone that URL to your machine. If you use the command line interface (cli) navigate to your workspace or the space where you want the code to be and type the folliwing:
+Go [the project's root folder](https://git.informatik.tu-cottbus.de/schubmat/Entwicklung_von_Softwaresystemen/) and copy git project URL (linked [here](https://git.informatik.tu-cottbus.de/schubmat/Entwicklung_von_Softwaresystemen.git)). Open a git client and clone that URL to your machine. If you use the command line interface (CLI) navigate to your workspace or the location where you want the code to be and type the following:
 
 * `git clone https://git.informatik.tu-cottbus.de/schubmat/Entwicklung_von_Softwaresystemen.git`
 
-This will clone the project into your local workspace. If you want to checkout the whole project into an IDE only refer to the repository URL:
+This will clone the project into your local workspace. If you want to check out the whole project into an IDE only refer to the repository URL:
 
 * `https://git.informatik.tu-cottbus.de/schubmat/Entwicklung_von_Softwaresystemen.git`
 
@@ -28,7 +28,7 @@ In order to compile the file
 
 you need the JavaFX library. Please make sure that you can run JavaFX programs. This should be the case if you are running an Oracle Java Development Kit 8 (JDK) update 40 or higher. If you run the Open JDK please make sure that you installed JavaFX separately (e.g. by installing the OpenJFX). 
 
-When you compile a java file with a package declaration you have to compile it from the projec's root directory. For our TimeFormatter this means, navigate to [the project's root](https://git.informatik.tu-cottbus.de/schubmat/Entwicklung_von_Softwaresystemen/tree/master) on the command line interface (cli) and compile the file as follows (assuming JavaFX is running as you are running the Oracle JDK 9): 
+When you compile a java file with a package declaration you have to compile it from the project's root directory. For our TimeFormatter this means, navigate to [the project's root](https://git.informatik.tu-cottbus.de/schubmat/Entwicklung_von_Softwaresystemen/tree/master) on the command line interface (CLI) and compile the file as follows (assuming JavaFX is running as you are running the Oracle JDK 9): 
 
 * `javac de/btu/sst/evs/blatt2/TimeFormatter.java`
 
